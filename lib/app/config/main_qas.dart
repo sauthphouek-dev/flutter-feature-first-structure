@@ -4,7 +4,7 @@ import 'package:feature_first_structure/environment/model/environment_model.dart
 
 void main() {
   bootstrap(() {
-    final environment = EnvironmentModel.from(Environment.staging);
+    final environment = EnvironmentModel.from(Environment.qas);
     return App(environment: environment);
   });
 }
