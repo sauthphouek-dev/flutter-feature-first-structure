@@ -1,6 +1,5 @@
+import 'package:feature_first_structure/features/sample_feature/presentation/screens/sample_view.dart';
 import 'package:go_router/go_router.dart';
-
-import '../screens/sample_feature/presentation/screens/sample_view.dart';
 
 /// {@template router}
 /// Router for the app.
@@ -13,7 +12,7 @@ class RouteConfigure {
       // Sample Feature
       GoRoute(
         path: '/',
-        builder: (context, state) => const SampleFeatureView(),
+        builder: (context, state) => const SampleView(),
       ),
     ],
   );
