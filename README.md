@@ -18,7 +18,8 @@ This project contains 3 flavors:
 - staging
 - production
 
-To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
+To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the
+following commands:
 
 ```sh
 # Development
@@ -35,6 +36,17 @@ _\*Feature First Structure works on iOS, Android, Web, and Windows._
 
 ---
 
+## Documentation 📖
+
+To create new feature run the following command: 'cp -r lib/features/sample_feature
+lib/features/new_feature'
+
+Use Flutter_Gen to generate the assets
+
+
+
+--- 
+
 ## Running Tests 🧪
 
 To run all unit and widget tests use the following command:
@@ -43,7 +55,8 @@ To run all unit and widget tests use the following command:
 $ flutter test --coverage --test-randomize-ordering-seed random
 ```
 
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
+To view the generated coverage report you can
+use [lcov](https://github.com/linux-test-project/lcov).
 
 ```sh
 # Generate Coverage Report
@@ -57,7 +70,8 @@ $ open coverage/index.html
 
 ## Working with Translations 🌐
 
-This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
+This project relies on [flutter_localizations][flutter_localizations_link] and follows
+the [official internationalization guide for Flutter][internationalization_link].
 
 ### Adding Strings
 
@@ -103,16 +117,16 @@ Widget build(BuildContext context) {
 
 ### Adding Supported Locales
 
-Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info.plist` to include the new locale.
+Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info.plist` to include
+the new locale.
 
 ```xml
     ...
 
-    <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-	</array>
+<key>CFBundleLocalizations</key>    <array>
+<string>en</string>
+<string>es</string>
+</array>
 
     ...
 ```
@@ -167,11 +181,19 @@ flutter gen-l10n --arb-dir="lib/l10n/arb"
 Alternatively, run `flutter run` and code generation will take place automatically.
 
 [coverage_badge]: coverage_badge.svg
+
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
+
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
+
 [license_link]: https://opensource.org/licenses/MIT
+
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
+
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
+
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
+
 # flutter-feature-first-structure

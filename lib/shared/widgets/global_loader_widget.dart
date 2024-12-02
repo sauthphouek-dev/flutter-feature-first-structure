@@ -7,10 +7,7 @@ import 'package:loader_overlay/loader_overlay.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
 class GlobalLoaderOverlyWidget extends StatelessWidget {
-  const GlobalLoaderOverlyWidget({
-    required this.child,
-    super.key,
-  });
+  const GlobalLoaderOverlyWidget({super.key, required this.child});
 
   final Widget child;
 
