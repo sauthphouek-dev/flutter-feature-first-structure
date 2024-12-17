@@ -98,10 +98,10 @@ class AppTheme {
   DividerThemeData get _dividerTheme {
     return const DividerThemeData(
       color: AppColors.outlineLight,
-      space: AppSizing.l,
+      space: AppSizing.lg,
       thickness: AppSizing.xxs,
-      indent: AppSizing.l,
-      endIndent: AppSizing.l,
+      indent: AppSizing.lg,
+      endIndent: AppSizing.lg,
     );
   }
 
@@ -166,7 +166,7 @@ class AppTheme {
         color: AppColors.primaryColor,
         fontWeight: AppFontWeight.medium,
       ),
-      contentPadding: const EdgeInsets.all(AppSizing.l),
+      contentPadding: const EdgeInsets.all(AppSizing.lg),
       border: const OutlineInputBorder(),
       filled: true,
       isDense: true,
@@ -219,8 +219,8 @@ class AppTheme {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(AppSizing.l),
-          topRight: Radius.circular(AppSizing.l),
+          topLeft: Radius.circular(AppSizing.lg),
+          topRight: Radius.circular(AppSizing.lg),
         ),
       ),
     );
@@ -229,7 +229,7 @@ class AppTheme {
   ListTileThemeData get _listTileTheme {
     return const ListTileThemeData(
       iconColor: AppColors.onBackground,
-      contentPadding: EdgeInsets.all(AppSizing.l),
+      contentPadding: EdgeInsets.all(AppSizing.lg),
     );
   }
 
@@ -262,7 +262,7 @@ class AppTheme {
       labelStyle: UITextStyle.button,
       labelColor: AppColors.darkAqua,
       labelPadding: const EdgeInsets.symmetric(
-        horizontal: AppSizing.l,
+        horizontal: AppSizing.lg,
         vertical: AppSizing.md + AppSizing.xxs,
       ),
       unselectedLabelStyle: UITextStyle.button,
@@ -374,10 +374,10 @@ class AppDarkTheme extends AppTheme {
   DividerThemeData get _dividerTheme {
     return const DividerThemeData(
       color: AppColors.onBackground,
-      space: AppSizing.l,
+      space: AppSizing.lg,
       thickness: AppSizing.xxs,
-      indent: AppSizing.l,
-      endIndent: AppSizing.l,
+      indent: AppSizing.lg,
+      endIndent: AppSizing.lg,
     );
   }
 }

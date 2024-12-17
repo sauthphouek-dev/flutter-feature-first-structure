@@ -31,12 +31,12 @@ class SampleFeatureView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: AppSizing.appPadding),
+          const SizedBox(height: AppSizing.padding),
           Text(
             'Sample Feature',
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          const SizedBox(height: AppSizing.appPadding),
+          const SizedBox(height: AppSizing.padding),
           Expanded(
             child: BlocBuilder<SampleFeatureCubit, SampleFeatureState>(
               builder: (context, state) {
@@ -47,7 +47,7 @@ class SampleFeatureView extends StatelessWidget {
                 } else if (state is SampleFeatureLoaded) {
                   return ListView.builder(
                     itemCount: state.sample.length,
-                    padding: const EdgeInsets.all(AppSizing.appPadding),
+                    padding: const EdgeInsets.all(AppSizing.padding),
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(state.sample[index].name),

@@ -15,7 +15,7 @@ abstract class AppSizing {
   static const double md = 12;
 
   /// abstract property l
-  static const double l = 16;
+  static const double lg = 16;
 
   /// abstract property xl
   static const double xl = 24;
@@ -24,8 +24,8 @@ abstract class AppSizing {
   static const double xxl = 32;
 
   /// app padding size
-  static const double appPadding = l;
+  static const double padding = lg;
 
   /// app border radius
-  static const double appBorderRadius = md;
+  static const double borderRadius = md;
 }

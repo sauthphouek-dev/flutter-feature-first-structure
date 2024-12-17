@@ -36,40 +36,34 @@ class NetworkingApiClient {
 
   final HttpClient _httpClient;
 
-  /// Fetches the sample data from the API.
+  /// Fetch the sample data from the API.
   ///
   /// Returns a `Map<String, dynamic>` containing the API response.
   /// Throws an `ApiException` if the response indicates an error.
   Future<Either<String, List<SampleModel>>> getSample() async {
     try {
-      // Make the GET request
-      // final response = await _httpClient.get('/sample');
-      //
-      // // Check for success status code
-      // final sampleResponse = SampleResponse.fromJson(response);
-
       // example of list of objects
       final listSample = List<SampleModel>.from([
         // example of object
-        SampleModel(
+        const SampleModel(
           id: 1,
           name: 'Sample 1',
           description: 'Sample description 1',
         ),
         // example of object
-        SampleModel(
+        const SampleModel(
           id: 2,
           name: 'Sample 2',
           description: 'Sample description 2',
         ),
         // example of object
-        SampleModel(
+        const SampleModel(
           id: 3,
           name: 'Sample 3',
           description: 'Sample description 3',
         ),
         // example of object
-        SampleModel(
+        const SampleModel(
           id: 4,
           name: 'Sample 4',
           description: 'Sample description 4',
@@ -82,8 +76,6 @@ class NetworkingApiClient {
       //   return Right(SampleResponse.fromJson(response));
       // }
       // return Left(sampleResponse.message);
-
-      //
     } on DioException catch (dioError) {
       // Handle DioException
       if (dioError.response != null) {

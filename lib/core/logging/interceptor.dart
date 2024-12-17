@@ -21,21 +21,25 @@ class AuthenticationQueuedInterceptor extends QueuedInterceptor {
     final accessToken = await _tokenStorage.getAccessToken();
     final refreshToken = await _tokenStorage.getRefreshToken();
 
-    if (accessToken != null && refreshToken != null) {
-      final accessTokenDuration = await _tokenStorage.getAccessTokenDuration();
-
-      log('accessTokenDuration: $accessTokenDuration');
-
-      if (accessTokenDuration.inMinutes < 110) {
-        log('accessTokenDuration less than $accessTokenDuration');
-        await onRefreshToken(refreshToken, accessToken, options, handler);
-      } else {
-        options.headers['Authorization'] = 'Bearer $accessToken';
-        return handler.next(options);
-      }
-    } else {
+    if (accessToken == null || refreshToken == null) {
       return handler.next(options);
     }
+
+    final accessTokenDuration = await _tokenStorage.getAccessTokenDuration();
+
+    if (accessTokenDuration.isNegative) {
+      await onRefreshToken(refreshToken, accessToken, options, handler);
+      return;
+    }
+
+    if (accessTokenDuration.inSeconds < 60) {
+      await onRefreshToken(refreshToken, accessToken, options, handler);
+      return;
+    }
+
+    // Token is valid, proceed with the request.
+    options.headers['Authorization'] = 'Bearer $accessToken';
+    handler.next(options);
   }
 
   // on refresh token
